@@ -1,7 +1,16 @@
+import { useState } from 'react';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [open, setOpen] = useState(false)
+
+  function toggleOpen() {
+    setTimeout(() => {}, 1500)
+    setOpen(true);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +26,8 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={toggleOpen}>Click Me</button>
+        {open && <p>The text is Visible</p>}
       </header>
     </div>
   );
